@@ -1,21 +1,27 @@
+
 import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        System.out.println("A four digit number? ");
+        int n = scan.nextInt();
 
-        System.out.print("A four-digit integer? ");
+        int s = 0;
 
-        int a = scan.nextInt();
+        s += n % 10;
+        n /= 10;
 
-        int fourth = a % 10;
-        int third = ((a %100) - fourth)/ 10;
-        int second = (((a % 1000)- fourth) / 100);
-        
+        s += n % 10;
+        n /= 10;
 
-        System.out.println( fourth + third + second);
+        s += n % 10;
+        n /= 10;
 
+        s += n % 10;
+        n /= 10;
 
+        System.out.println("A sum of four digit numbers is " + s);
     }
 }
